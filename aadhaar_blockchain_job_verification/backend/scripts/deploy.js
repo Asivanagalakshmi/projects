@@ -1,0 +1,6 @@
+import hre from "hardhat";
+
+const Registry = await hre.ethers.getContractFactory("CredentialRegistry");
+const registry = await Registry.deploy();
+await registry.waitForDeployment();
+console.log("CredentialRegistry deployed to:", await registry.getAddress());
